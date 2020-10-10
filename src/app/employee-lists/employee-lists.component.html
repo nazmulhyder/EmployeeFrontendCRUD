@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <h2>Employee List</h2>
+    </div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Phone</th>
+                <th scope="col" style="text-align:left;">Action</th>
+              </tr>
+            </thead>
+            <tbody>               
+              <tr  *ngFor="let employee of employees | async">
+                <td>{{employee.name}}</td>
+                <td>{{employee.designation}}</td>
+                <td>{{employee.phone}}</td>
+                <td>
+                    <button id="btnUpdate" (click)="updateEmployee(employee.id)" class="btn btn-info">update</button>
+                    <button id="btnDetails" (click)="getDetail(employee.id)" class="btn btn-info" style="margin-left: 5px;">details</button>
+                    <button id=btnDelete (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 5px;">delete</button>                   
+                </td>
+              </tr>
+              <tr *ngIf="(employees | async)?.length === 0">
+                <td colspan="4" rowspan="4" style="text-align: center;color: red;"><b>N0 DATA FOUND</b></td>              
+              </tr>
+            </tbody>
+          </table>
+    </div>    
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <label for="lblEmployeeDetails"><h3>Employee Details</h3></label>
+    <hr>
+    <div *ngIf = "employee">
+        <div class="form-group">
+            <label for="name">Name: </label> {{employee.name}}
+        </div>
+        <div class="form-group">
+            <label for="designation">Designation: </label> {{employee.designation}}
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone: </label> {{employee.phone}}
+        </div>
+    </div>
+    <button class="btn btn-danger">back</button>
+</div>

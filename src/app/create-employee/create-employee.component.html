@@ -1,0 +1,29 @@
+<div class="container">
+  <label for="lblCreateEmployee"><h3>Create Employee</h3></label>
+  <hr>
+  <div [hidden]="submitted">
+    <form (ngSubmit)="OnSubmit()" style="width: 400px;">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="txtName" type="text" class="form-control" required [(ngModel)] = "employee.name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="designation">Designation</label>
+        <input id="txtDesignation" type="text" class="form-control" required [(ngModel)] = "employee.designation" name="designation">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="txtPhone" type="text" class="form-control" required [(ngModel)] = "employee.phone" name="phone">
+      </div>
+
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
+  </div>
+</div>
+
+<div [hidden] = "!submitted">
+    <h4>Saved Successfully!</h4>
+    <button (click) = "newEmployee()" class="btn btn-success">New</button>
+</div>
